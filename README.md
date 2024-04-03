@@ -56,4 +56,4 @@ $ tree .
 
 ## User Benefits
 
-The "RRAlves Terminal" plugin enriches posts with an aesthetic and functional representation of terminals, elevating the quality of technical and educational content. It provides an interactive way to engage readers, allowing technical concepts to be presented clearly and attractively. This plugin is an excellent addition to any site looking to improve how technical contents are shared and understood by their audience.
+The "RRAlves Terminal" plugin enriches posts with an aesthetic and functional representation of terminals, elevating the quality of technical and educational content. It provides an interactive way to engage readers, allowing technical concepts to be presented clearly and attractively. 

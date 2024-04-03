@@ -4,18 +4,18 @@ The "RRAlves Terminal" plugin is a simple tool for WordPress that simulates a te
 
 The core of this plugin is the `[terminal][/terminal]` shortcode, which allows users to encapsulate specific text or commands that should be displayed within an environment that mimics a terminal. The plugin offers customizable attributes, such as `user`, `computer`, and `cwd` (current working directory), so authors can customize the command prompt displayed before the commands in the terminal. For example, using
 
-`
+```
 [terminal user=root computer=suzail pwd=www]
 $ ls -la
 [/terminal]
-`
+```
 customizes the prompt to reflect these specific values.
 
 ![terminal1](https://rralves.dev.br/wp-content/uploads/2024/04/terminal5.jpg)
 
 Note that the “root” user will be printed in red, while the rest will be printed in green.
 
-`
+```
 [terminal user=alves computer=arabel pwd=public/www]
 $ tree .
 .
@@ -30,7 +30,7 @@ $ tree .
 │   ├── admin-functions.php
 │   ├── admin-header.php
 [/terminal]
-`
+```
 
 ![terminal2](https://rralves.dev.br/wp-content/uploads/2024/04/terminal6.jpg)
 

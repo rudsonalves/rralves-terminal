@@ -1,27 +1,23 @@
-# Plugin WordPress - RRAlves Terminal
+The "RRAlves Terminal" plugin is a simple tool for WordPress that simulates a terminal emulation around your text, giving it the appearance of an iOS or Linux terminal. This functionality is particularly interesting for bloggers, developers, and educators who wish to present commands, code, or instructions in a stylized and interactive way in their posts.
 
-O plugin “RRAlves Terminal” é uma ferramenta simples para o WordPress que simula uma emulação de terminal ao redor do seu texto, proporcionando a aparência de um terminal do iOS ou Linux. Essa funcionalidade é particularmente interessante para bloggers, desenvolvedores e educadores que desejam apresentar comandos, códigos ou instruções de maneira estilizada e interativa em seus posts.
+## How the Plugin Works
 
-Seu código é bem simples e está disponível para dowload no meu GitHub: rralves-terminal. Sinta-se a vontade para baixar, usar e alterar a seu gosto.
-Funcionamento do Plugin
+The core of this plugin is the `[terminal][/terminal]` shortcode, which allows users to encapsulate specific text or commands that should be displayed within an environment that mimics a terminal. The plugin offers customizable attributes, such as `user`, `computer`, and `cwd` (current working directory), so authors can customize the command prompt displayed before the commands in the terminal. For example, using
 
-O coração deste plugin é o shortcode,
+`
+[terminal user=root computer=suzail pwd=www]
+$ ls -la
+[/terminal]
+`
+customizes the prompt to reflect these specific values.
 
-que permite aos usuários encapsular texto ou comandos específicos que devem ser exibidos dentro de um ambiente que imita um terminal. O plugin oferece atributos personalizáveis, como user, computer, e cwd (diretório de trabalho atual), para que os autores possam customizar a prompt de comando exibida antes dos comandos no terminal. Por exemplo, usar
+![terminal1](https://rralves.dev.br/wp-content/uploads/2024/04/terminal5.jpg)
 
-personaliza a prompt para refletir esses valores específicos.
+Note that the “root” user will be printed in red, while the rest will be printed in green.
 
-Bash
-
-
-root@suzail:~$ ls -la
-
-Observe que o usuário “root” será impresso em vermelho, enquanto que outros, são impressos em verde.
-
-Bash
-
-
-alves@arabel:~$ tree .
+`
+[terminal user=alves computer=arabel pwd=public/www]
+$ tree .
 .
 ├── index.php
 ├── license.txt
@@ -33,21 +29,31 @@ alves@arabel:~$ tree .
 │   ├── admin-footer.php
 │   ├── admin-functions.php
 │   ├── admin-header.php
+[/terminal]
+`
 
-Características Principais
+![terminal2](https://rralves.dev.br/wp-content/uploads/2024/04/terminal6.jpg)
 
-    Personalização de Prompt: Os usuários podem definir o usuário, o nome do computador e o diretório de trabalho atual para personalizar a prompt de comando do terminal.
-    Estilos de Terminal: Suporte para diferentes estilos de terminal, como iOS e Linux, permitindo aos usuários escolher a aparência que melhor se adapta ao conteúdo ou preferência pessoal.
-    Shortcode Versátil: Através do uso do shortcode terminal, os autores podem facilmente adicionar saídas de terminal estilizadas dentro de seus posts, melhorando a forma como o conteúdo técnico é apresentado.
-    Estilização CSS: O plugin se encarrega de enfileirar e aplicar os estilos CSS necessários para assegurar que a emulação do terminal tenha uma aparência autêntica e esteja visualmente integrada ao resto do conteúdo do site.
+## Key Features
 
-Implementação Técnica
+- **Prompt Customization**: Users can define the user, computer name, and current working directory to personalize the terminal's command prompt.
 
-    Geração de Prompt Dinâmica: A classe Terminal contém métodos para gerar dinamicamente a prompt do terminal baseada nos atributos fornecidos pelo usuário, utilizando classes CSS para diferenciar visualmente usuários comuns de root.
-    Criação de Saída Formatada: O plugin constrói a saída do terminal formatando o conteúdo encapsulado pelo shortcode. Isso inclui a adição de um cabeçalho de terminal, bem como a formatação do conteúdo como se estivesse sendo exibido em um terminal real.
-    Estilos Customizáveis: A função register_styles gerencia o carregamento dos arquivos CSS necessários para estilizar o terminal, garantindo que a aparência do terminal seja consistente e profissional.
-    Processamento de Conteúdo: O plugin divide o conteúdo do shortcode em linhas individuais, permitindo uma representação precisa de múltiplos comandos ou saídas dentro do terminal simulado.
+- **Terminal Styles**: Support for different terminal styles, like iOS and Linux, allowing users to choose the appearance that best fits their content or personal preference.
 
-Benefícios para o Usuário
+- **Versatile Shortcode**: Through the use of the `[terminal]` shortcode, authors can easily add stylized terminal outputs within their posts, enhancing how technical content is presented.
 
-O plugin “RRAlves Terminal” enriquece os posts com uma representação estética e funcional de terminais, elevando a qualidade do conteúdo técnico e educativo. Ele fornece uma maneira interativa de engajar os leitores, permitindo que conceitos técnicos sejam apresentados de forma clara e visualmente atraente.
+- **CSS Styling**: The plugin takes care of enqueuing and applying the necessary CSS styles to ensure that the terminal emulation has an authentic appearance and is visually integrated with the rest of the site content.
+
+## Technical Implementation
+
+- **Dynamic Prompt Generation**: The `Terminal` class contains methods to dynamically generate the terminal prompt based on the attributes provided by the user, using CSS classes to visually differentiate between normal users and `root`.
+
+- **Formatted Output Creation**: The plugin constructs the terminal output by formatting the content encapsulated by the shortcode. This includes adding a terminal header, as well as formatting the content as if it were being displayed in an actual terminal.
+
+- **Customizable Styles**: The `register_styles` function manages the loading of the necessary CSS files to style the terminal, ensuring that the appearance of the terminal is consistent and professional.
+
+- **Content Processing**: The plugin divides the shortcode content into individual lines, allowing for an accurate representation of multiple commands or outputs within the simulated terminal.
+
+## User Benefits
+
+The "RRAlves Terminal" plugin enriches posts with an aesthetic and functional representation of terminals, elevating the quality of technical and educational content. It provides an interactive way to engage readers, allowing technical concepts to be presented clearly and attractively. This plugin is an excellent addition to any site looking to improve how technical contents are shared and understood by their audience.
